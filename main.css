@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+}
+
+.blank {
+  background-color: blank;
+  border-radius: 10px;
+}
+
+.snake {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.fruit {
+  background-color: red;
+  border-radius: 10px;
+}
+
+.head {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.red {
+  background-color: red;
+}
+
+.white {
+  background-color: white;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
