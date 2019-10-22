@@ -3,7 +3,7 @@ const canvasWidth = 1005;
 const blockWidth = 5;
 
 var boxHeights = [];
-
+var i = 0;
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   createBoxes();
@@ -14,8 +14,6 @@ function draw() {
   background(0);
   bubbleSort();
 }
-
-i = 0;
 
 function bubbleSort() {
   if (i < boxHeights.length) {
