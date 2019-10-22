@@ -1,25 +1,36 @@
-var a = [7, 2, 1, 8, 6, 3, 5, 4];
+var a = [10, 7, 8, 9, 1, 5];
 
-var p = 7;
-var i = -1;
-var j = 0;
+function partition(arr, low, high) {
+  var i = low - 1;
+  var p = arr[high];
 
-while (j < p) {
-  if (a[j] < a[p]) {
-    i++;
-    let temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+  for (var j = low; j < high; j++) {
+    if (arr[j] < p) {
+      i += 1;
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
   }
-  j++;
+  temp = arr[i + 1];
+  arr[i + 1] = arr[high];
+  arr[high] = temp;
+  return i + 1;
+}
 
-  if (j == p) {
-    let temp = a[i + 1];
-    a[i + 1] = a[p];
-    a[p] = temp;
+function quickSort(arr, low, high) {
+  if (low < high) {
+    pi = partition(arr, low, high);
 
-    break;
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
   }
 }
 
+// for (var i = 0; i < 50; i++) {
+//   var h = Math.floor(Math.random() * 500 + 1);
+//   a.push(h);
+// }
+
+quickSort(a, 0, a.length - 1);
 console.log(a);
