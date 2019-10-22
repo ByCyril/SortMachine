@@ -1,13 +1,14 @@
 const canvasHeight = 505;
 const canvasWidth = 1005;
-const blockWidth = 5;
+const blockWidth = 50;
 
 var boxHeights = [];
 var i = 0;
+
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   createBoxes();
-  frameRate(25);
+  frameRate(35);
 }
 
 function draw() {
@@ -28,6 +29,10 @@ function bubbleSort() {
 
   i++;
 
+  retainBoxes();
+}
+
+function retainBoxes() {
   for (let i = 0; i < boxHeights.length; i++) {
     fill(255);
     rect(
