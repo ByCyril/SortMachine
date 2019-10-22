@@ -1,6 +1,6 @@
 const canvasHeight = 505;
 const canvasWidth = 1005;
-const blockWidth = 50;
+const blockWidth = 2;
 
 var boxHeights = [];
 var i = 0;
