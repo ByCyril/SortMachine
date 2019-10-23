@@ -3,12 +3,12 @@ const canvasWidth = 1000;
 const blockWidth = 5;
 
 var boxHeights = [];
-// var i = 0;
+var i = 0;
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   createBoxes();
-  // quickSort(boxHeights, 0, boxHeights.length - 1);
+  quickSort(boxHeights, 0, boxHeights.length - 1);
 }
 
 function draw() {
@@ -46,11 +46,11 @@ async function partition(low, high) {
   return i + 1;
 }
 
-function bubbleSort() {
+async function bubbleSort() {
   if (i < boxHeights.length) {
     for (var j = i + 1; j < boxHeights.length; j++) {
       if (boxHeights[j] < boxHeights[i]) {
-        swapRect(boxHeights, i, j);
+        await swapRect(boxHeights, i, j);
       }
     }
   } else {
