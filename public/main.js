@@ -80,7 +80,7 @@ function createBoxes() {
 }
 
 async function swapRect(ar, i, j) {
-  await sleep(25);
+  await sleep(15);
   let temp = ar[i];
   ar[i] = ar[j];
   ar[j] = temp;
