@@ -8,8 +8,6 @@ function bubbleSort() {
         swapRect(boxHeights, j, j + 1);
       }
     }
-  } else {
-    noLoop();
   }
   i++;
 }

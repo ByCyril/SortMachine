@@ -36,6 +36,6 @@ async function mergeSort(l, r) {
 }
 
 async function swapRect(value, i) {
-  await sleep(2);
+  await sleep(1);
   boxHeights[i] = value;
 }
