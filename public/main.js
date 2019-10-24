@@ -1,62 +1,33 @@
 const canvasHeight = 500;
 const canvasWidth = 1000;
-const blockWidth = 5;
+const blockWidth = 7;
 
 var boxHeights = [];
-var i = 0;
+var algo = "";
+
+function changeAlgo(algo) {
+  this.algo = algo;
+}
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
   createBoxes();
-  quickSort(boxHeights, 0, boxHeights.length - 1);
+  if (algo == "quicksort.js") {
+    quickSort(boxHeights, 0, boxHeights.length - 1);
+  } else if (algo == "bubblesort.js") {
+    frameRate(15);
+  } else if (algo == "mergesort.js") {
+    mergeSort(0, boxHeights.length - 1);
+  } else {
+  }
 }
 
 function draw() {
   background(0);
-  // bubbleSort();
+  if (algo == "bubblesort.js") {
+    bubbleSort();
+  }
   retainBoxes();
-}
-
-async function quickSort(arr, low, high) {
-  if (low < high) {
-    var pi = await partition(low, high);
-
-    await Promise.all([
-      quickSort(arr, low, pi - 1),
-      quickSort(arr, pi + 1, high)
-    ]);
-  } else {
-    console.log("done", boxHeights);
-    // noLoop();
-  }
-}
-
-async function partition(low, high) {
-  var i = low - 1;
-  var p = boxHeights[high];
-
-  for (var j = low; j < high; j++) {
-    if (boxHeights[j] <= p) {
-      i += 1;
-      await swapRect(boxHeights, i, j);
-    }
-  }
-  await swapRect(boxHeights, i + 1, high);
-
-  return i + 1;
-}
-
-async function bubbleSort() {
-  if (i < boxHeights.length) {
-    for (var j = i + 1; j < boxHeights.length; j++) {
-      if (boxHeights[j] < boxHeights[i]) {
-        await swapRect(boxHeights, i, j);
-      }
-    }
-  } else {
-    noLoop();
-  }
-  i++;
 }
 
 function retainBoxes() {
@@ -77,13 +48,6 @@ function createBoxes() {
     boxHeights.push(h);
     rect(i, canvasHeight - (h + 5), blockWidth, h);
   }
-}
-
-async function swapRect(ar, i, j) {
-  await sleep(15);
-  let temp = ar[i];
-  ar[i] = ar[j];
-  ar[j] = temp;
 }
 
 function sleep(ms) {
