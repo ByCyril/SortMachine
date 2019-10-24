@@ -18,7 +18,8 @@ function setup() {
     frameRate(15);
   } else if (algo == "mergesort.js") {
     mergeSort(0, boxHeights.length - 1);
-  } else {
+  } else if (algo == "heapsort.js") {
+    heapSort();
   }
 }
 
