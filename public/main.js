@@ -1,6 +1,6 @@
 const canvasHeight = 500;
 const canvasWidth = 1000;
-const blockWidth = 7;
+const blockWidth = 5;
 
 var boxHeights = [];
 var algo = "";
