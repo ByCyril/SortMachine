@@ -51,6 +51,6 @@ function createBoxes() {
   }
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function sleep() {
+  return new Promise(resolve => setTimeout(resolve, 5));
 }

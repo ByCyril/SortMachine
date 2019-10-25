@@ -25,12 +25,8 @@ async function partition(low, high) {
 }
 
 async function swapRect(ar, i, j) {
-  await sleep(20);
+  await sleep();
   let temp = ar[i];
   ar[i] = ar[j];
   ar[j] = temp;
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
